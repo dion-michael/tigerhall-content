@@ -1,44 +1,34 @@
-import { Box, Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import './App.css';
-import { gql, useQuery } from '@apollo/client';
-import { SearchIcon } from '@chakra-ui/icons';
-
-const PODCAST_QUERY = gql`{
-  contentCards(filter: {limit: 20, keywords: "", types: [PODCAST]}) {
-    edges {
-      ... on Podcast {
-        name
-        image {
-          uri
-        }
-        categories {
-          name
-        }
-        participants {
-          firstName
-          lastName
-          jobTitle
-          company
-        }
-      }
-    }
-  }
-}`;
+import { useQuery } from '@apollo/client';
+import SearchBar from './components/SearchBar';
+import { PODCAST_QUERY } from './lib/queries';
+import useDebounce from './hooks/useDebounce';
+import SearchResultCard from './components/SearchResultCard';
+import LoadingCard from './components/LoadingCard';
 
 function App() {
+  const { data, loading, refetch } = useQuery(PODCAST_QUERY, {
+    variables: {
+      keywords: ''
+    }
+  });
 
-  const { data, loading } = useQuery(PODCAST_QUERY);
+  const debouncedFetch = useDebounce((v: string) => {
+    refetch({ keywords: v });
+  }, 300);
 
   return (
     <Box as='section' display="flex" alignItems="center" justifyContent="center">
-      <Box maxW={400} width={"100%"} p={12} border="1px solid black">
-        <InputGroup>
-          <InputLeftElement pointerEvents="none">
-            <SearchIcon color="gray.300" />
-          </InputLeftElement>
-          <Input focusBorderColor='brand.secondary' type='text' placeholder='search' />
-        </InputGroup>
-        {loading ? 'loading...' : JSON.stringify(data, null, 2)}
+      <Box maxW={400} width={"100%"} p={12}>
+        <SearchBar onChange={e => debouncedFetch(e.target.value)} />
+        <Flex alignItems="center" justifyContent="center" flexDir="column" paddingY={6}>
+          {loading && [...Array(3)].map((x, i) => <LoadingCard key={i} />)}
+          {data && data.contentCards.edges.map((data: any) => (
+            <SearchResultCard cardData={data} key={data.id} />
+          ))}
+        </Flex>
+        {loading ? 'loading...' : <pre>{JSON.stringify(data, null, 2)}</pre>}
       </Box>
     </Box>
   );
