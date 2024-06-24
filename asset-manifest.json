@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/tigerhall-content/static/css/main.b1195526.css",
-    "main.js": "/tigerhall-content/static/js/main.a550618a.js",
+    "main.js": "/tigerhall-content/static/js/main.3b0ce905.js",
     "static/js/453.2d757e46.chunk.js": "/tigerhall-content/static/js/453.2d757e46.chunk.js",
     "static/media/PPNeueMontreal-SemiBolditalic.otf": "/tigerhall-content/static/media/PPNeueMontreal-SemiBolditalic.ef9ee1837108053b9463.otf",
     "static/media/PPNeueMontreal-Medium.otf": "/tigerhall-content/static/media/PPNeueMontreal-Medium.0f34f4714f1b26e0dedc.otf",
@@ -14,11 +14,11 @@
     "static/media/PPFormula-Light.otf": "/tigerhall-content/static/media/PPFormula-Light.2cc65cc006509073430a.otf",
     "index.html": "/tigerhall-content/index.html",
     "main.b1195526.css.map": "/tigerhall-content/static/css/main.b1195526.css.map",
-    "main.a550618a.js.map": "/tigerhall-content/static/js/main.a550618a.js.map",
+    "main.3b0ce905.js.map": "/tigerhall-content/static/js/main.3b0ce905.js.map",
     "453.2d757e46.chunk.js.map": "/tigerhall-content/static/js/453.2d757e46.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b1195526.css",
-    "static/js/main.a550618a.js"
+    "static/js/main.3b0ce905.js"
   ]
 }
