@@ -13,6 +13,7 @@ interface Props extends React.PropsWithChildren {
 }
 
 const SearchResultCard: React.FC<Props> = ({ cardData }) => {
+  console.log({ cardData })
   return (
     <Card w="sm" p={0} mb={6} bg={'white'}>
       <CardBody p={0}>
