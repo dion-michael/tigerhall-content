@@ -11,3 +11,76 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+@font-face {
+  font-family: "Montreal";
+  src: local("PPNeueMontreal-thin"), 
+    url("./fonts/PPNeueMontreal-Thin.otf") format('opentype');
+  font-weight: 375;
+}
+
+@font-face {
+  font-family: "Montreal";
+  src: local("PPNeueMontreal-Book"),
+    url("./fonts/PPNeueMontreal-Book.otf") format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Montreal";
+  src: local("PPNeueMontreal-Medium"),
+    url("./fonts/PPNeueMontreal-Medium.otf") format('opentype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Montreal";
+  src: local("PPNeueMontreal-Bold"),
+    url("./fonts/PPNeueMontreal-Bold.otf") format('opentype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Montreal";
+  src: local("PPNeueMontreal-Bold"),
+    url("./fonts/PPNeueMontreal-Bold.otf") format('opentype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Montreal";
+  src: local("PPNeueMontreal-Italic"),
+    url("./fonts/PPNeueMontreal-Italic.otf") format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montreal";
+  src: local("PPNeueMontreal-SemiBolditalic"),
+    url("./fonts/PPNeueMontreal-SemiBolditalic.otf") format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+/** ============================= */
+
+@font-face {
+  font-family: "Formula";
+  src: local("PPFormula-Light"),
+    url("./fonts/PPFormula-Light.otf") format('opentype');
+}
+
+@font-face {
+  font-family: "Formula";
+  src: local("PPFormula-Medium"),
+    url("./fonts/PPFormula-Medium.otf") format('opentype');
+}
+
+@font-face {
+  font-family: "Formula";
+  src: local("PPFormula-Extrabold"),
+    url("./fonts/PPFormula-Extrabold.otf") format('opentype');
+}
