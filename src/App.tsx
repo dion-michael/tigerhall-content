@@ -1,25 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Box, ChakraProvider, Code } from '@chakra-ui/react';
 import './App.css';
+import { gql, useQuery } from '@apollo/client';
+import theme from './theme';
+
+const PODCAST_QUERY = gql`{
+  contentCards(filter: {limit: 20, keywords: "", types: [PODCAST]}) {
+    edges {
+      ... on Podcast {
+        name
+        image {
+          uri
+        }
+        categories {
+          name
+        }
+        participants {
+          firstName
+          lastName
+          jobTitle
+          company
+        }
+      }
+    }
+  }
+}`;
 
 function App() {
+
+  const { data, loading } = useQuery(PODCAST_QUERY);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider theme={theme}>
+      <Box as='section' display="flex" alignItems="center" justifyContent="center">
+        <Code maxWidth={400} bg="brand.main" color="error" p="6">{loading ? 'loading...' : JSON.stringify(data, null, 2)}</Code>
+      </Box>
+    </ChakraProvider>
   );
 }
 
