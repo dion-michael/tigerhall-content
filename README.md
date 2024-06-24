@@ -24,6 +24,8 @@ Launches the test runner in the interactive watch mode.
 
 run unit tests and collecting coverage
 
+<img width="928" alt="Screenshot 2024-06-25 at 07 28 04" src="https://github.com/dion-michael/tigerhall-content/assets/47719753/e5d9dc6f-3685-4cc7-a691-03c920d3086f">
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.
